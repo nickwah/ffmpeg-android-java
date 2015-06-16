@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -42,6 +43,9 @@ public class Home extends Activity implements View.OnClickListener {
     @InjectView(R.id.run_command)
     Button runButton;
 
+    @InjectView(R.id.record)
+    Button recordButton;
+
     private ProgressDialog progressDialog;
 
     @Override
@@ -57,6 +61,7 @@ public class Home extends Activity implements View.OnClickListener {
 
     private void initUI() {
         runButton.setOnClickListener(this);
+        recordButton.setOnClickListener(this);
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle(null);
@@ -150,6 +155,9 @@ public class Home extends Activity implements View.OnClickListener {
                     Toast.makeText(Home.this, getString(R.string.empty_command_toast), Toast.LENGTH_LONG).show();
                 }
                 break;
+            case R.id.record:
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
         }
     }
 }

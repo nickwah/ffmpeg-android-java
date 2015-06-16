@@ -4,6 +4,7 @@ import android.content.Context;
 import android.text.TextUtils;
 
 import java.lang.reflect.Array;
+import java.nio.ByteBuffer;
 import java.util.Map;
 
 import com.github.hiteshsondhi88.libffmpeg.exceptions.FFmpegCommandAlreadyRunningException;
@@ -74,6 +75,10 @@ public class FFmpeg implements FFmpegInterface {
         } else {
             throw new IllegalArgumentException("shell command cannot be empty");
         }
+    }
+
+    public void writeBuffer(byte[] buffer) {
+        ffmpegExecuteAsyncTask.writeBuffer(buffer);
     }
 
     public <T> T[] concatenate (T[] a, T[] b) {
