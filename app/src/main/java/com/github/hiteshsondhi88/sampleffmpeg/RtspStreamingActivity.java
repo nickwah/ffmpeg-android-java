@@ -99,7 +99,7 @@ public class RtspStreamingActivity extends Activity {
 		String origCommand = "-y -min_port 19100 -max_port 19999 -reorder_queue_size 15 -max_delay 500000 -rtsp_transport udp -i ";
 		origCommand += "rtsp://127.0.0.1:19093/live.sdp";
 		origCommand += " -acodec copy -vcodec copy -metadata:s:v:0 rotate=90 -f flv ";
-		origCommand += "rtmp://stream3.likes.com:1935/LikesLiveShows/nicktest";
+		origCommand += "rtmp://host.example.com:1935/live/stream_name";
 		final String[] command = origCommand.split(" ");
 		final String ffmpegCommand = origCommand;
 		try {

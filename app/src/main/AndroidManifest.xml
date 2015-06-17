@@ -53,6 +53,11 @@
             android:label="Recording"
             android:theme="@android:style/Theme.Black.NoTitleBar"
             >
+        </activity>
+        <activity android:name=".WatchVideoActivity"
+            android:label="Recording"
+            android:theme="@android:style/Theme.Black.NoTitleBar"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
