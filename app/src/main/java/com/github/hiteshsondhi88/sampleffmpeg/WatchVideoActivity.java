@@ -145,7 +145,7 @@ public class WatchVideoActivity extends Activity {
 
     protected void broadcastStream() {
         // -avioflags direct -fflags nobuffer -max_delay 100000
-        String origCommand = "-y -fflags nobuffer -max_delay 100000 -analyzeduration 600000 -f flv -i ";
+        String origCommand = "-y -fflags nobuffer -max_delay 100000 -analyzeduration 600000 -rtmp_buffer 500 -f flv -i ";
         origCommand += "rtmp://stream.host.example.com:1935/live/stream_name";
         origCommand += " -strict experimental -acodec aac -ab 128k -vcodec copy -movflags +empty_moov -f mp4 ";
         origCommand += "tcp://127.0.0.1:19094";
